@@ -5,19 +5,20 @@ public class TipCalculator {
     //WRITE YOUR PROGRAM IN calculateTip
     public static String calculateTip(int people, int percent, double cost) { //You must use these  variable in your calculations
         //DO NOT DELETE ANY OF THE CODE BELOW      
-
+        final double tip =  (cost * ( (double) percent / 100));
         String result = "-------------------------------\n" +
-                       "Total bill before tip: $" + "" + "\n" +
-                       "Total percentage: " + "" + "%\n" +
-                       "Total tip: $" + "" + "\n" +
-                       "Total Bill with tip: $" + "" + "\n" +
-                       "Per person cost before tip: $" + "" + "\n" +
-                       "Tip per person: $" + "" + "\n" +
-                       "Total cost per person: $" + "" + "\n" +
+                       "Total bill before tip: $" + cost + "$" + "\n" +
+                       "Total percentage: " + percent+ "%"  + "\n" +
+                       "Total tip: $" + tip + "\n" +
+                       "Total Bill with tip: $" + (tip + cost)  + "\n" +
+                       "Per person cost before tip: $" + cost / people + "\n" +
+                       "Tip per person: $" + tip / people + "\n" +
+                       "Total cost per person: $" + (cost + tip) / people + "\n" +
                        "-------------------------------\n";
 
         return result;
     }
+    
 
     public static String extraCredit(int people, int percent, double cost) {
         String result = "Extra credit not implemented";
@@ -48,8 +49,8 @@ public class TipCalculator {
         int people=10; 
         int percent=8;
         double cost=10.5;              
-        //System.out.println(calculateTip(people,percent,cost));
-        System.out.println(extraCredit(people, percent, cost));
+        System.out.println(calculateTip(people,percent,cost));
+        //System.out.println(extraCredit(people, percent, cost));
     }
 }
         

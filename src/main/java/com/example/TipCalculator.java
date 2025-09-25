@@ -1,4 +1,5 @@
 package com.example;
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class TipCalculator {
@@ -6,14 +7,15 @@ public class TipCalculator {
     public static String calculateTip(int people, int percent, double cost) { //You must use these  variable in your calculations
         //DO NOT DELETE ANY OF THE CODE BELOW      
         final double tip =  (cost * ( (double) percent / 100));
+        DecimalFormat df = new DecimalFormat("0.00");
         String result = "-------------------------------\n" +
                        "Total bill before tip: $" + cost + "$" + "\n" +
                        "Total percentage: " + percent+ "%"  + "\n" +
-                       "Total tip: $" + tip + "\n" +
-                       "Total Bill with tip: $" + (tip + cost)  + "\n" +
-                       "Per person cost before tip: $" + cost / people + "\n" +
-                       "Tip per person: $" + tip / people + "\n" +
-                       "Total cost per person: $" + (cost + tip) / people + "\n" +
+                       "Total tip: $" + df.format(tip) + "\n" +
+                       "Total Bill with tip: $" + df.format((tip + cost))  + "\n" +
+                       "Per person cost before tip: $" + df.format(cost / people) + "\n" +
+                       "Tip per person: $" + df.format(tip / people) + "\n" +
+                       "Total cost per person: $" + df.format((cost + tip) / people) + "\n" +
                        "-------------------------------\n";
 
         return result;

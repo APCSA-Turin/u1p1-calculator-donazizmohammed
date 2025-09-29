@@ -7,9 +7,9 @@ public class TipCalculator {
     public static String calculateTip(int people, int percent, double cost) { //You must use these  variable in your calculations
         //DO NOT DELETE ANY OF THE CODE BELOW      
         final double tip =  (cost * ( (double) percent / 100));
-        DecimalFormat df = new DecimalFormat("0.00");
+        DecimalFormat df = new DecimalFormat("0.0#");
         String result = "-------------------------------\n" +
-                       "Total bill before tip: $" + cost + "$" + "\n" +
+                       "Total bill before tip: $" + cost + "\n" +
                        "Total percentage: " + percent+ "%"  + "\n" +
                        "Total tip: $" + df.format(tip) + "\n" +
                        "Total Bill with tip: $" + df.format((tip + cost))  + "\n" +
